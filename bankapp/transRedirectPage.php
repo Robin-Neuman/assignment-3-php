@@ -1,11 +1,11 @@
 <?php
 
-require_once "./classes/transfer.php";
+require_once "./classes/Transfer.php";
 
-$trans = new Transfer();
-
+session_start();
 if (!empty($_POST['amount'])) {
-        $trans->transferAmount($_POST['amount']);
+    $trans = new Transfer();
+        $trans->transferAmount($_POST['amount'], $_SESSION["userAccountNumber"], $_POST["accountNumber"]);
 }
 ?>
 
@@ -21,13 +21,16 @@ if (!empty($_POST['amount'])) {
 
 <body>
     <h1>How much do you wish to transfer?</h1>
-    <form action="transRedirectPage.php" method="POST">
+    <form method="POST">
     <input type="number" name="amount">
+    <?php
+    echo '<input name="accountNumber" value="'.$_POST["accountNumber"].'" hidden>';
+    ?>
     <button type="submit">Send</button>
     </form>
         
     
-    <a href="transPage.php">
+    <a href="/transPage.php">
         <h3>Back</h3>
     </a>
 </body>

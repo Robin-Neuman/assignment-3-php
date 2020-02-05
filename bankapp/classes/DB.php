@@ -24,8 +24,7 @@ class DB
                 $this->_user, 
                 $this->_password,
                 $this->_options
-            );
-            echo "Success";
+            );           
         } catch (PDOException $e) {
             echo "Error!: " . $e->getMessage() . "<br/>";
             die();

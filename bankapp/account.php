@@ -1,3 +1,10 @@
+<?php 
+
+if (!isset($_SESSION["username"])) {
+$_SESSION["username"] = $randUser;
+}
+?> 
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,12 +20,16 @@
 
     <h3>Current balance: 412412</h3>
 
+    <div>
     <a href="index.php">
-        <h3>Home</h3>
+        Home
     </a>
+    </div>
+    <div>
     <a href="transPage.php">
-        <h3>Make transaction</h3>        
-    </a> 
+        Make transaction
+    </a>
+    </div>
 </body>
 
 </html>

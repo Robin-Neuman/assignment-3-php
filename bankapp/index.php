@@ -1,3 +1,19 @@
+<?php 
+require_once "./classes/RandUser.php";
+
+$random = new RandUser();
+
+session_start();
+
+if (!isset($_SESSION["username"])) {
+$randUser = $random->getRandomUser();
+
+$_SESSION["username"] = $randUser[0];
+$_SESSION["userAccountNumber"] = $randUser[1];
+echo $_SESSION["userAccountNumber"];
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,19 +23,22 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Bank page</title>
 </head>
-
 <body>
-    <h1>Welcome to the bank page!</h1>
+    <h1>Welcome to the bank page <?php echo $_SESSION["username"]; ?>!</h1>
 
-    <a href="account.php">
-        <h3>Your account</h3>
-    </a>
-    <a href="transPage.php">
-        <h3>Make transaction</h3>        
-    </a>
-    <?php
-        print("Hello");
-    ?>    
+    <div>
+        <a href="account.php">
+        Your account
+        </a>
+    </div>
+    <div>
+        <a href="transPage.php">
+        Make transaction
+        </a>
+    </div>
+    <div>
+        <a href="logout.php">Randomize user</a>
+    </div>
 </body>
 
 </html>
