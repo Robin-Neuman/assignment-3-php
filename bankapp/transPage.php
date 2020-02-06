@@ -1,3 +1,11 @@
+<?php
+
+session_start();
+
+echo '<input id="accountNumber" value="'.$_SESSION["userAccountNumber"].'" hidden>';
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,8 +14,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Transfer page</title>
-    <script src="/js/main.js"></script>
-    <link rel="stylesheet" href="/css/style.css">
+    <script src="./js/request.js"></script>
+    <link rel="stylesheet" href="/css/bankappCss.css">
 </head>
 
 <body>

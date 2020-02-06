@@ -9,6 +9,7 @@ if (!empty($_POST['amount'])) {
 }
 ?>
 
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,25 +18,28 @@ if (!empty($_POST['amount'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Transfer page</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/bankappCss.css">
 </head>
 
 <body>
     
     <h1>How much do you wish to transfer?</h1>
 
+    <div id="options">
+    <div class="opt">    
     <form method="POST">
     <input type="number" name="amount">
     <?php
-    echo '<input name="accountNumber" value="'.$_POST["accountNumber"].'" hidden>';
+    echo '<input name="accountNumber" id="accountNumber" value="'.$_POST["accountNumber"].'" hidden>';
     ?>
     <button type="submit">Send</button>
-    </form>        
-    
-    <div id="options">
+    </form>
+    </div>
+    <div class="opt">      
         <a href="/transPage.php">
             Back
         </a>
+    </div>
     </div>
 </body>
 

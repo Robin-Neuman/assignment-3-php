@@ -20,11 +20,11 @@ if (isset($_SESSION["userAccountNumber"])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Account</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/bankappCss.css">
 </head>
 
 <body>
-    <h1>Welcome to the account page!</h1>
+    <h1>Welcome to the account page <span class="boldType"><?php if (isset($_SESSION["username"])) echo $_SESSION["username"]; ?>!</h1>
 
     <h3><span class="boldType">Current balance:</span> <?php if (isset($GLOBALS["userBalance"])) echo $GLOBALS["userBalance"]; ?></h3>
 
