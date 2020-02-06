@@ -26,7 +26,7 @@ if (isset($_SESSION["userAccountNumber"])) {
 <body>
     <h1>Welcome to the account page!</h1>
 
-    <h3>Current balance: <?php if (isset($GLOBALS["userBalance"])) echo $GLOBALS["userBalance"]; ?></h3>
+    <h3><span class="boldType">Current balance:</span> <?php if (isset($GLOBALS["userBalance"])) echo $GLOBALS["userBalance"]; ?></h3>
 
     <div id="options">
         <div class="opt">

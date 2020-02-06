@@ -13,10 +13,10 @@ require_once "./classes/DB.php";
                 echo 
                 '<form action="/transRedirectPage.php" method="POST">
                 <li>
-                    <div>
+                    <div id="userAccounts">
                     <input value="'.$row["accountNumber"].'" name="accountNumber" hidden>
-                    <p>Name: ' .$row["firstName"]. ' ' .$row["lastName"].'</p>
-                    <p>Account number: ' .$row["accountNumber"]. ' <button type="submit">Make transfer</button></p>
+                    <p><span class="boldType">Name:</span> ' .$row["firstName"]. ' ' .$row["lastName"].'</p>
+                    <p><span class="boldType">Account number:</span> ' .$row["accountNumber"]. ' <button type="submit">Make transfer</button></p>
                     </div>
                 </li>
                 </form>';

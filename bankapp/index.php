@@ -28,7 +28,7 @@ if (!isset($_SESSION["username"])) {
 </head>
 <body>
     <div id="welcomeMsg">
-        <h1>Welcome to the bank page <?php if (isset($_SESSION["username"])) echo $_SESSION["username"]; ?>!</h1>
+        <h1>Welcome to the bank page <span class="boldType"><?php if (isset($_SESSION["username"])) echo $_SESSION["username"]; ?></span>!</h1>
     </div>
 
     <div id="options">
