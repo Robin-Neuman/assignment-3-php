@@ -1,15 +1,13 @@
 <?php
-require_once 'DB.php';
 
 class AuthTrans
 {
     private $_db;
 
-    public function __construct()
+    public function __construct(DB $_db)
     {
         //Sets up DB link
-        $dbclass = new DB();
-        $this->_db = $dbclass->pdo;
+        $this->_db = $_db->pdo;
     }
 
     public function authTransfer($amount, $userAccount, $targetAccount)

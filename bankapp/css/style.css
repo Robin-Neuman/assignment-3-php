@@ -1,0 +1,17 @@
+body {
+    padding: 20px;
+    color: rgb(34, 31, 31);
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    list-style-type: none;
+}
+#welcomeMsg {
+    
+}
+#options a{
+    text-decoration: none;
+    color: rgb(44, 76, 136);
+}
+.opt {
+    margin-bottom: 10px;
+}
+/*color: rgb(44, 76, 136);*/

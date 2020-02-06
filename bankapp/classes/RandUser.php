@@ -17,18 +17,24 @@ class RandUser
         $user;
         $array = array();
         $sql = "SELECT * FROM users;";
-            $data = $this->_db->query($sql);
-
-            $randomNum = rand(1, 10);
-            $sql = "SELECT * FROM users WHERE id = $randomNum;";
-            $randomUser = $this->_db->query($sql);
+            if ($data = $this->_db->query($sql)) 
+            {
+                $randomNum = rand(1, 10);
+                $sql = "SELECT * FROM users WHERE id = $randomNum;";
+                $randomUser = $this->_db->query($sql);
             
-            foreach ($randomUser as $row) {
-                array_push($array, $row["username"]);
-                array_push($array, $row["accountNumber"]);
-                return $array;
-                
+                foreach ($randomUser as $row) {
+                    array_push($array, $row["username"]);
+                    array_push($array, $row["accountNumber"]);
+                    return $array;                
+                }
+            } 
+            else 
+            {
+                echo "Could not find any users in DB";
             }
+
+            
             
     }
 }

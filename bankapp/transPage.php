@@ -7,25 +7,28 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Transfer page</title>
     <script src="/js/main.js"></script>
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
     <h1>Welcome to the transfer page!</h1>
 
+    <div id="options">
+        <div class="opt">
+            <a href="index.php">
+                Home
+            </a>
+        </div>
+        <div class="opt">
+            <a href="account.php">
+                Your account
+            </a>
+        </div>
+    </div>
+
     <h3>List of account holders to transfer to:</h3>
 
     <div id="accContainer">
-    </div>
-
-    <div>
-        <a href="index.php">
-        Home
-        </a>
-    </div>
-    <div>
-        <a href="account.php">
-        Your account
-        </a>
     </div>
 </body>
 

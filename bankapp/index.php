@@ -3,14 +3,16 @@ require_once "./classes/RandUser.php";
 
 $random = new RandUser();
 
+$randUser;
+
 session_start();
 
 if (!isset($_SESSION["username"])) {
-$randUser = $random->getRandomUser();
-
-$_SESSION["username"] = $randUser[0];
-$_SESSION["userAccountNumber"] = $randUser[1];
-echo $_SESSION["userAccountNumber"];
+    if ($randUser = $random->getRandomUser()) 
+    {
+        $_SESSION["username"] = $randUser[0];
+        $_SESSION["userAccountNumber"] = $randUser[1]; 
+    }
 }
 ?>
 
@@ -22,22 +24,27 @@ echo $_SESSION["userAccountNumber"];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Bank page</title>
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <h1>Welcome to the bank page <?php echo $_SESSION["username"]; ?>!</h1>
+    <div id="welcomeMsg">
+        <h1>Welcome to the bank page <?php if (isset($_SESSION["username"])) echo $_SESSION["username"]; ?>!</h1>
+    </div>
 
-    <div>
-        <a href="account.php">
-        Your account
-        </a>
-    </div>
-    <div>
-        <a href="transPage.php">
-        Make transaction
-        </a>
-    </div>
-    <div>
-        <a href="logout.php">Randomize user</a>
+    <div id="options">
+        <div class="opt">
+            <a href="account.php">
+                Your account
+            </a>
+        </div>
+        <div class="opt">
+            <a href="transPage.php">
+                Make transaction
+            </a>
+        </div>
+        <div class="opt">
+            <a href="logout.php">Randomize user</a>
+        </div>
     </div>
 </body>
 
