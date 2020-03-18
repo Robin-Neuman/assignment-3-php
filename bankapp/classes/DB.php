@@ -3,7 +3,7 @@ class DB
 {
     private $_host = "localhost";
     private $_port = 3306;
-    private $_db = "bankapp";
+    private $_db = "bank";
     private $_user = "root";
     private $_password = "bbkkll123";
     private $_options = [

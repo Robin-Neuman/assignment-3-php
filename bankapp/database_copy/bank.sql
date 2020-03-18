@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 06, 2020 at 12:56 AM
+-- Generation Time: Feb 06, 2020 at 11:43 PM
 -- Server version: 8.0.18
 -- PHP Version: 7.4.1
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `bankapp`
+-- Database: `bank`
 --
 
 -- --------------------------------------------------------
@@ -41,16 +41,16 @@ CREATE TABLE `account` (
 --
 
 INSERT INTO `account` (`id`, `user_id`, `currency`, `balance`, `userAccountNumber`) VALUES
-(1, 1, 'SEK', 5090, 456190),
-(2, 2, 'SEK', 10344, 456191),
+(1, 1, 'SEK', 5232, 456190),
+(2, 2, 'SEK', 9989, 456191),
 (3, 3, 'SEK', 436, 456192),
-(4, 4, 'SEK', 34901, 456193),
+(4, 4, 'SEK', 31882, 456193),
 (5, 5, 'SEK', 103709, 456194),
-(6, 6, 'SEK', 27177, 456195),
-(7, 7, 'SEK', 4590, 456196),
+(6, 6, 'SEK', 26870, 456195),
+(7, 7, 'SEK', 4502, 456196),
 (8, 8, 'SEK', 200, 456197),
-(9, 9, 'SEK', 19023, 456198),
-(10, 10, 'SEK', 841, 456199);
+(9, 9, 'SEK', 19011, 456198),
+(10, 10, 'SEK', 1753, 456199);
 
 -- --------------------------------------------------------
 
@@ -274,7 +274,11 @@ INSERT INTO `transactions` (`transaction_id`, `from_amount`, `from_account`, `fr
 (197, 13922, 8, 'SEK', 13922, 9, 'SEK', '1.000', '2020-01-01 10:00:00'),
 (198, 1317, 5, 'SEK', 1317, 7, 'SEK', '1.000', '2020-01-01 10:00:00'),
 (199, 28445, 5, 'SEK', 28445, 7, 'SEK', '1.000', '2020-01-01 10:00:00'),
-(200, 34882, 2, 'SEK', 34882, 9, 'SEK', '1.000', '2020-01-01 10:00:00');
+(200, 34882, 2, 'SEK', 34882, 9, 'SEK', '1.000', '2020-01-01 10:00:00'),
+(201, 11, 456193, 'SEK', 11, 456199, 'SEK', '1.000', '2020-02-06 22:33:40'),
+(202, 100, 456193, 'SEK', 100, 456199, 'SEK', '1.000', '2020-02-06 22:34:07'),
+(203, 100, 456193, 'SEK', 100, 456199, 'SEK', '1.000', '2020-02-06 22:35:25'),
+(204, 124, 456193, 'SEK', 124, 456199, 'SEK', '1.000', '2020-02-06 22:37:38');
 
 -- --------------------------------------------------------
 
@@ -347,7 +351,7 @@ ALTER TABLE `account`
 -- AUTO_INCREMENT for table `transactions`
 --
 ALTER TABLE `transactions`
-  MODIFY `transaction_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=201;
+  MODIFY `transaction_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=205;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
